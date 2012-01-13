@@ -1,5 +1,5 @@
 all:
-	uglifyjs jquery-download.js > jquery-download.min.js
+	uglifyjs jquery-css2txt.js > jquery-css2txt.min.js
 
 clean:
-	rm jquery-download.min.js
+	rm jquery-css2txt.min.js
