@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="jquery-css2txt.js"></script>
+
+    <style type="text/css">
+      body {
+      font-family: Helvetica, sans-serif;
+      }
+
+      #controls {
+      border: 1px solid #aaa;
+      margin: .5em;
+      padding: .5em;
+      }
+
+      #output pre {
+      border: 1px solid #333;
+      -moz-box-shadow: 6px 6px 6px #666;
+      -webkit-box-shadow: 6px 6px 6px #666;
+      box-shadow: 6px 6px 6px #666;
+      margin: .5em;
+      padding: .5em;
+      }
+
+    </style>
+    <link rel="alternate stylesheet" type="text/css" href="sample.css" />
+    <title>jquery-download Demo</title>
+  </head>
+
+  <body>
+    <div id="controls" >
+      <input id="view" type="button" value="View stylesheets" />
+    </div>
+    <div id="output">
+    </div>
+
+    <script type="text/javascript">
+
+$('#view').bind('click', function() {
+  $('#output').empty();
+  $.each($(document.styleSheets).css2txt(), function(idx, text) {
+console.log('hit it');
+    $('#output').append($('<pre />').text(text));
+  });
+});
+
+    </script>
+  </body>
+</html>
