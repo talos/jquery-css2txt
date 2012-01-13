@@ -32,37 +32,6 @@
    implied, of John Krauss.
 **/
 
-/**
-   DOCUMENTATION
-
-   This jQuery plugin takes stylesheets and converts them back to
-   their textual representation.
-
-   Example:
-
-   $(document.styleSheets).css2txt();
-
-   [
-   
-   ]
-
-   Fork it from
-   http://www.github.com/talos/jquery-css2txt
-
-   CDN it at
-   http://talos.github.com/jquery-css2txt/jquery-css2txt.js
-   http://talos.github.com/jquery-css2txt/jquery-css2txt.min.js
-**/
-
-/**
-   VERSIONS
-
-   0.1.0 : Initial release
-**/
-
-/**
-   CODE
-**/
 (function($) {
     /**
        Convert a single stylesheet to text.
@@ -75,8 +44,10 @@
         var i = -1,
         rules = stylesheet.cssRules,
         text = '';
-        while( ++i < rules.length ) {
-            text += rules[i].cssText + "\r\n";
+        if(rules) {
+            while( ++i < rules.length ) {
+                text += rules[i].cssText + "\r\n";
+            }
         }
         return text;
     };

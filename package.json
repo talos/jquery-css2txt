@@ -1,0 +1,34 @@
+{
+    "name": "jquery-css2txt",
+    "version": "0.1.0",
+    "title": "jQuery-css2txt",
+    "author": {
+        "name": "John Krauss",
+        "url": "https://github.com/talos"
+    },
+    "licenses": [
+        {
+            "type": "BSD",
+            "url": "LICENSE.txt"
+        }
+    ],
+    "dependencies": {
+        "jquery": "1"
+    },
+    "description": "This jQuery plugin takes stylesheets and converts them back to their textual representation. ",
+    "keywords": [
+        "css",
+        "stylesheets"
+    ],
+    "homepage": "https://github.com/talos/jquery-css2txt",
+    "maintainers": [
+        {
+            "name": "John Krauss",
+            "url": "https://github.com/talos"
+        }
+    ],
+    "files": [
+        "jquery-css2txt.js",
+        "jquery-css2txt.min.js"
+    ]
+}
