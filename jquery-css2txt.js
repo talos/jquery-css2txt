@@ -32,7 +32,19 @@
    implied, of John Krauss.
 **/
 
-(function($) {
+/*globals define, jQuery, CSSStyleSheet*/
+
+(function (factory) {
+    "use strict";
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
+    "use strict";
     /**
        Convert a single stylesheet to text.
 
@@ -40,12 +52,13 @@
 
        @return The stylesheet as text.
     **/
-    var css2txt = function(stylesheet) {
-        var i = -1,
-        rules = stylesheet.cssRules,
-        text = '';
-        if(rules) {
-            while( ++i < rules.length ) {
+    var css2txt = function (stylesheet) {
+        var i,
+            rules = stylesheet.cssRules,
+            text = '';
+
+        if (rules) {
+            for (i = 0; i < rules.length; i += 1) {
                 text += rules[i].cssText + "\r\n";
             }
         }
@@ -61,10 +74,10 @@
        is its textual representation.  Any non-CSSStyleSheets will be
        empty strings.
      **/
-    $.fn.css2txt = function() {
+    $.fn.css2txt = function () {
         var ary = [];
-        $.each(this, function(i, el) {
-            if(el instanceof CSSStyleSheet) {
+        $.each(this, function (i, el) {
+            if (el instanceof CSSStyleSheet) {
                 ary.push(css2txt(el));
             } else {
                 ary.push('');
@@ -72,4 +85,4 @@
         });
         return ary;
     };
-})(jQuery);
+}));
